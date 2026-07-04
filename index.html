@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issue Tracker | Log in Page</title>
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Added Daisy UI Link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="log-in-page shadow-lg mx-auto rounded-md py-8 max-w-md min-h-screen my-10">
+    <section>
+        <div class="">
+            <img class="mx-auto mb-5" src="./assets/github-logo.png" alt="logo">
+            <h1 class="font-bold text-2xl text-center">GitHub Issues Tracker</h1>
+            <p class="text-md text-[#64748B] text-center">Sign in to manage your issues</p>
+        </div>
+
+        <fieldset class="fieldset mx-auto max-w-sm mt-5">
+            <label class="label font-medium text-[#1F2937]">Username</label>
+            <input type="text" class="input w-full rounded-md" placeholder="Enter Username" />
+            <p class="text-[#4A00FF]">Default: admin</p>
+
+            <label class="label font-medium text-[#1F2937]">Password</label>
+            <input type="password" class="input w-full rounded-md" placeholder="Enter Password" />
+            <p class="text-[#4A00FF]">Default: admin123</p>
+
+            <button class="btn btn-primary mt-4 rounded-md">Sign In</button>
+
+            <div class="divider before:h-[0.5px] after:h-[0.5px]">OR</div>
+        </fieldset>
+
+        <p class="text-neutral/50 text-center mb-2">Demo Credentials:</p>
+
+        <div class="bg-base-200 text-center rounded-lg max-w-sm mx-auto py-5 mt-3">
+            <p class="text-center font-semibold">Username: <span class="text-neutral/50">admin</span></p>
+            <p class="text-center font-semibold">Password: <span class="text-neutral/50">admin123</span></p>
+        </div>
+
+          
+
+    </section>
+</body>
+
+</html>
