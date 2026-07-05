@@ -23,7 +23,7 @@
         rel="stylesheet">
 
     <!-- CSS Link -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body class="log-in-page shadow-lg mx-auto rounded-md py-8 max-w-md min-h-screen my-10">
@@ -34,19 +34,23 @@
             <p class="text-md text-[#64748B] text-center">Sign in to manage your issues</p>
         </div>
 
-        <fieldset class="fieldset mx-auto max-w-sm mt-5">
+        <!-- Form Section START -->
+       <form action="">
+         <fieldset class="fieldset mx-auto max-w-sm mt-5">
             <label class="label font-medium text-[#1F2937]">Username</label>
-            <input type="text" class="input w-full rounded-md" placeholder="Enter Username" />
+            <input id="input-name" type="text" class="input w-full rounded-md" placeholder="Enter Username" required/>
             <p class="text-[#4A00FF]">Default: admin</p>
 
             <label class="label font-medium text-[#1F2937]">Password</label>
-            <input type="password" class="input w-full rounded-md" placeholder="Enter Password" />
+            <input id="input-password" type="password" class="input w-full rounded-md required" placeholder="Enter Password" required/>
             <p class="text-[#4A00FF]">Default: admin123</p>
 
-            <button class="btn btn-primary mt-4 rounded-md">Sign In</button>
+            <button id="signin-btn" type="submit" class="btn btn-primary mt-4 rounded-md">Sign In</button>
 
             <div class="divider before:h-[0.5px] after:h-[0.5px]">OR</div>
         </fieldset>
+       </form>
+       <!-- Form Section END -->
 
         <p class="text-neutral/50 text-center mb-2">Demo Credentials:</p>
 
@@ -54,10 +58,10 @@
             <p class="text-center font-semibold">Username: <span class="text-neutral/50">admin</span></p>
             <p class="text-center font-semibold">Password: <span class="text-neutral/50">admin123</span></p>
         </div>
-
-          
-
     </section>
+
+    <!-- link js -->
+     <script src="./js/login.js"></script>
 </body>
 
 </html>
