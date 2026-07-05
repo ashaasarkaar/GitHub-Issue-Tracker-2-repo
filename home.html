@@ -39,27 +39,39 @@
                                     d="M4 6h16M4 12h8m-8 6h16" />
                             </svg>
                         </div>
-                        <ul tabindex="-1"
-                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>Item 1</a></li>
-                            <li>
-                                <a>Parent</a>
-                                <ul class="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a>Item 3</a></li>
-                        </ul>
-                    </div>
+       
+         <ul
+        tabindex="-1"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow space-y-4">
 
+             <label class="input w-48">
+                       <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Search issues..."/>
+                    </label>
+
+                    <a class="btn"><i class="fa-solid fa-plus"></i>New Issues...</a>
+       
+      </ul>
+      </div>
+
+      
+      
+
+                  
+                        <!-- logo with Text START -->
                     <div class="flex items-center gap-3">
                         <img src="./assets/github-logo.png" alt="github logo" class="w-12 h-12">
                         <h2 class="font-bold text-xl">GitHub Issues Tracker</h2>
                     </div>
+                    <!-- logo with Text END -->
                    
-                </div>
-                <div class="navbar-end hidden lg:flex space-x-2">
+                
+                     </div>
+                
+
+            
+
+            <div class="navbar-end hidden lg:flex space-x-2">
 
                     <label class="input w-64">
                        <i class="fa-solid fa-magnifying-glass"></i>
@@ -67,8 +79,11 @@
                     </label>
 
                     <a class="btn btn-primary"><i class="fa-solid fa-plus"></i>New Issues...</a>
+                    
                 </div>
             </div>
+
+        
         </nav>
     </header>
 </body>
