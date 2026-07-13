@@ -25,6 +25,7 @@
     <!-- CSS Link -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <!-- header Section START -->
     <header class="bg-base-100 shadow-md">
@@ -39,39 +40,38 @@
                                     d="M4 6h16M4 12h8m-8 6h16" />
                             </svg>
                         </div>
-       
-         <ul
-        tabindex="-1"
-        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow space-y-4">
 
-             <label class="input w-48">
-                       <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Search issues..."/>
-                    </label>
+                        <ul tabindex="-1"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow space-y-4">
 
-                    <a class="btn"><i class="fa-solid fa-plus"></i>New Issues...</a>
-       
-      </ul>
-      </div>
-                        <!-- logo with Text START -->
+                            <label class="input w-48">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" placeholder="Search issues..." />
+                            </label>
+
+                            <a class="btn"><i class="fa-solid fa-plus"></i>New Issues...</a>
+
+                        </ul>
+                    </div>
+                    <!-- logo with Text START -->
                     <div class="flex items-center gap-3">
                         <img src="./assets/github-logo.png" alt="github logo" class="w-12 h-12">
                         <h2 class="font-bold text-xl">GitHub Issues Tracker</h2>
                     </div>
                     <!-- logo with Text END -->
-                   
-                
-                     </div>
-            
-            <div class="navbar-end hidden lg:flex space-x-2">
+
+
+                </div>
+
+                <div class="navbar-end hidden lg:flex space-x-2">
 
                     <label class="input w-64">
-                       <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Search issues..."/>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input id="input-search" type="text" placeholder="Search issues..." />
                     </label>
 
                     <a class="btn btn-primary"><i class="fa-solid fa-plus"></i>New Issues...</a>
-                    
+
                 </div>
             </div>
         </nav>
@@ -79,11 +79,105 @@
     <!-- header Section END -->
 
     <!-- All Button Section START -->
-     <section class="btns-section w-10/12 mx-auto mt-10 py-4 px-3 bg-base-100 shadow-lg rounded-md space-x-3">
-        <a class="btn px-9">All</a>
-        <a class="btn px-7">Open</a>
-        <a class="btn px-7">Closed</a>
-     </section>
+    <section class="btns-section w-10/12 mx-auto mt-10 py-4 px-3 bg-base-100 shadow-lg rounded-lg space-x-3">
+        <a onclick="loadAllCards()" id="all-btn" class="btn px-9">All</a>
+        <a id="open-btn" class="btn px-7">Open</a>
+        <a id="closed-btn" class="btn px-7">Closed</a>
+    </section>
     <!-- All Button Section END -->
+
+    <!-- All Issues Count Section Code START -->
+    <div class="flex items-center justify-between w-10/12 mx-auto mt-10 py-4 px-3 bg-base-100 shadow-lg rounded-md">
+        <!-- Left Side Section START -->
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 rounded-full border-4 border-[#4A00FF40]">
+                <img src="./assets/Aperture.png" alt="aperture_img">
+            </div>
+
+            <div>
+                <p class="font-semibold"><span id="count">0</span> Issues</p>
+                <p>Track and manage your project issues</p>
+            </div>
+        </div>
+        <!-- Left Side Section END -->
+
+        <!-- Right Side Section START -->
+        <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2">
+                <div class="bg-[#00A96E] w-2 h-2 rounded-full"></div>
+                <p class="text-[#1F2937]">Open</p>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <div class="bg-[#A855F7] w-2 h-2 rounded-full"></div>
+                <p class="text-[#1F2937]">Closed</p>
+            </div>
+        </div>
+        <!-- Right Side Section END -->
+    </div>
+    <!-- All Issues Count Section Code END -->
+
+    <!-- Manage Spinner START -->
+    <section id="spinner" class="flex justify-center items-center mt-4 hidden mb-4">
+        <span class="loading loading-ball loading-xs"></span>
+        <span class="loading loading-ball loading-sm"></span>
+        <span class="loading loading-ball loading-md"></span>
+        <span class="loading loading-ball loading-lg"></span>
+        <span class="loading loading-ball loading-xl"></span>
+    </section>
+    <!-- Manage Spinner END -->
+
+
+
+    <!-- All Card Section START -->
+    <section id="all-card-container" class="w-10/12 mx-auto shadow-lg rounded-md py-4 px-6 grid grid-cols-3 gap-4">
+
+
+
+    </section>
+    <!-- All Card Section END -->
+
+    <!-- open Card Section START -->
+    <section id="open-card-container" class="w-10/12 mx-auto shadow-lg rounded-md py-4 px-6 grid grid-cols-3 gap-4">
+
+
+
+    </section>
+    <!-- open Card Section END -->
+
+     <!-- close Card Section START -->
+    <section id="close-card-container" class="w-10/12 mx-auto shadow-lg rounded-md py-4 px-6 grid grid-cols-3 gap-4">
+
+
+
+    </section>
+    <!-- close Card Section END -->
+
+    <!-- Modal Section START -->
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="modal_details.showModal()">open modal</button> -->
+    <dialog id="modal_details" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+
+            <div id="modal_details_container" class="space-y-3 px-10">
+
+            </div>
+
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn btn-primary rounded-lg">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+    <!-- Modal Section END -->
+
+
+
+    <!-- js link -->
+    <script src="./js/helper.js"></script>
+    <script src="./js/home.js"></script>
 </body>
+
 </html>
